@@ -1,0 +1,89 @@
+@import "./variables";
+@import "./mixins";
+@import "./extends";
+
+body {
+  font-family: $font;
+  font-weight: getVariable($fontWeight, weightRegular);
+  font-size: getVariable($fontSize, sizeMedium);
+  line-height: getVariable($fontHeight, lineHeightMedium);
+  color: getVariable($colors, "text");
+  background-image: url("../images/geo-wave.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+
+[id="NotiflixReportWrap"] a#NXReportButton {
+  background: getVariable($colors, "accent");
+}
+
+.notiflix-report {
+  backdrop-filter: blur(8px);
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  body {
+    background-image: url("../images/geo-wave.jpg");
+  }
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-family: $font;
+  font-weight: getVariable($fontWeight, weightBold);
+  font-size: getVariable($fontSize, sizeTitleMob);
+  line-height: getVariable($fontHeight, lineHeightTitleMob);
+}
+
+.container {
+  width: $screen-sm;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+
+  @include mdTabBreakPoint {
+    width: $screen-md;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include lgDesBreakPoint {
+    width: $screen-lg;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @include xlDesBreakPoint {
+    width: $screen-xl;
+  }
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: getVariable($colors, "accent");
+  margin-top: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 67px;
+}

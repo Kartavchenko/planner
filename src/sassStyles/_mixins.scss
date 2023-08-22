@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin smMobBreakPoint {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin mdTabBreakPoint {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin lgDesBreakPoint {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin xlDesBreakPoint {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}

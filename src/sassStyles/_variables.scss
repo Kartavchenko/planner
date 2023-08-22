@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-lg: 1280px;
+$screen-xl: 1440px;
+
+$font: "Poppins", sans-serif;
+
+$fontWeight: (
+  weightBold: 600,
+  weightMedium: 500,
+  weightRegular: 400,
+);
+
+$fontSize: (
+  sizeTitle: 32px,
+  sizeTitleMob: 24px,
+  sizeLarge: 16px,
+  sizeMedium: 14px,
+  sizeSmall: 12px,
+);
+
+$fontHeight: (
+  lineHeightTitle: 48px,
+  lineHeightTitleMob: 36px,
+  lineHeightLarge: 24px,
+  lineHeightMedium: 20px,
+  lineHeightSmall: 16px,
+);
+
+$colors: (
+  "accent": #7b61ff,
+  "hover": #6243FF,
+  "height": #ff2b77,
+  "medium": #e2a300,
+  "low": #6bd475,
+  "divider": #aca7c3,
+  "text": #3f3f3f,
+  "white": #ffffff,
+  "error": #ff2b77,
+  "gray": #808080,
+);
+
+@function getVariable($map, $key) {
+  @return map-get($map, $key);
+}

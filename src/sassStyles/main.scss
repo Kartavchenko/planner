@@ -1,0 +1,11 @@
+@import "modern-normalize/modern-normalize.css";
+@import "./global";
+@import "./variables";
+@import "../Components/CustomSelect/customSelect.scss";
+@import "../Components/Error/errorElement.scss";
+@import "../Components/FormEvent/formEvent.scss";
+@import "../Components/SearchBar/searchBar.scss";
+@import "../Components/Header/header.scss";
+@import "../Components/ListEvents/listEvents.scss";
+@import "../Components/BtnCreateEvent/btnCreateEvent.scss";
+@import "../Components/DetailsEvent/detailsEvent.scss";

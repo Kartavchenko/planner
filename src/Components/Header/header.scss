@@ -1,0 +1,32 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background: getVariable($colors, "white");
+  border-bottom: 1px solid getVariable($colors, "accent");
+
+  @include mdTabBreakPoint {
+    padding: 26px 133px 18px 40px;
+    display: block;
+  }
+
+  @include lgDesBreakPoint {
+    padding: 22px 173px 22px 80px;
+  }
+}
+
+.nav {
+  @include mdTabBreakPoint {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+}
+
+.main-title {
+  cursor: pointer;
+  color: getVariable($colors, "accent");
+}

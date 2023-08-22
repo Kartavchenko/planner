@@ -1,0 +1,213 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/extends";
+
+.form-title {
+  margin-top: 24px;
+}
+
+.form {
+  background: getVariable($colors, "white");
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  margin-bottom: 40px;
+
+  @include mdTabBreakPoint {
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  @include lgDesBreakPoint {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 42px;
+    padding: 40px;
+  }
+}
+
+.box-field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  &__picture {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+    @include mdTabBreakPoint {
+      align-items: flex-end;
+      margin-top: 140px;
+    }
+
+    @include lgDesBreakPoint {
+      margin-top: 60px;
+    }
+  }
+
+  @include mdTabBreakPoint {
+    &:nth-child(-n + 4) {
+      grid-column: 1;
+    }
+
+    &:nth-child(n + 5) {
+      grid-column: 2;
+    }
+
+    &:nth-child(2) {
+      grid-row: span 2;
+    }
+
+    &:nth-child(5) {
+      grid-row: 1;
+    }
+
+    &:nth-child(6) {
+      grid-row: 2;
+    }
+
+    &:nth-child(7) {
+      grid-row: 3;
+    }
+
+    &:nth-child(8) {
+      grid-row: 4;
+    }
+  }
+
+  @include lgDesBreakPoint {
+    &:nth-child(1) {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    &:nth-child(2) {
+      grid-row: span 2;
+      grid-column: 1;
+    }
+
+    &:nth-child(3) {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    &:nth-child(4) {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
+    &:nth-child(5) {
+      grid-row: 3;
+      grid-column: 2;
+    }
+
+    &:nth-child(n + 6) {
+      grid-column: 3;
+    }
+
+    &:nth-child(6) {
+      grid-row: 1;
+    }
+
+    &:nth-child(7) {
+      grid-row: 2;
+    }
+
+    &:nth-child(8) {
+      grid-row: 3;
+    }
+  }
+}
+
+.label {
+  font-family: inherit;
+  font-size: getVariable($fontSize, sizeLarge);
+  line-height: getVariable($fontHeight, lineHeightSmall);
+  color: getVariable($colors, "accent");
+
+  &.picture {
+    color: getVariable($colors, "divider");
+  }
+}
+
+.input {
+  font-family: inherit;
+  font-size: getVariable($fontSize, sizeLarge);
+  line-height: getVariable($fontHeight, lineHeightLarge);
+  color: getVariable($colors, "text");
+  padding: 16px 12px;
+  border: 1px solid getVariable($colors, "divider");
+  border-radius: 8px;
+  margin-top: 8px;
+  outline: none;
+
+  &__textarea {
+    font-family: inherit;
+    border: 1px solid getVariable($colors, "divider");
+    resize: none;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 16px 12px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid getVariable($colors, "accent");
+    }
+
+    &.error {
+      border: 1px solid getVariable($colors, "error");
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid getVariable($colors, "accent");
+  }
+
+  &.error {
+    border: 1px solid getVariable($colors, "error");
+  }
+
+  &:disabled {
+    background-color: getVariable($colors, "white");
+  }
+}
+
+.error-msg {
+  color: getVariable($colors, "error");
+  display: flex;
+  justify-content: end;
+}
+
+.btn-submit {
+  @extend %button;
+  padding: 16px 0;
+
+  @include mdTabBreakPoint {
+    width: 193px;
+  }
+}

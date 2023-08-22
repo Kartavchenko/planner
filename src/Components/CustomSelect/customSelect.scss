@@ -1,0 +1,55 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.custom-select {
+  display: block;
+}
+
+.select-label {
+  display: inline-block;
+}
+
+.select-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .dropdown-button {
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &.open .options-list {
+    display: block;
+  }
+
+  .options-list {
+    list-style: none;
+    padding: 0 16px;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: getVariable($colors, "white");
+    border-radius: 8px;
+    box-shadow: 2px 4px 9px 0px #a68dae47;
+    width: 100%;
+    z-index: 1;
+
+    .option {
+      cursor: pointer;
+      padding: 16px 0;
+      border-bottom: 1px solid getVariable($colors, "divider");
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: getVariable($colors, "accent");
+      }
+    }
+  }
+}

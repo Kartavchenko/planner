@@ -1,0 +1,147 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/extends";
+@import "../../sassStyles/mixins";
+
+.box-title {
+  display: flex;
+  @include mdTabBreakPoint {
+    flex-direction: row-reverse;
+    align-items: baseline;
+  }
+}
+
+.list-title {
+  display: none;
+
+  @include mdTabBreakPoint {
+    display: inline-block;
+  }
+}
+
+.list-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  justify-content: center;
+
+  margin: 40px 0;
+
+  @include mdTabBreakPoint {
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-rows: initial;
+  }
+
+  @include lgDesBreakPoint {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  @include xlDesBreakPoint {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  background: getVariable($colors, "white");
+  overflow: hidden;
+  width: 272px;
+  height: 480px;
+
+  @include mdTabBreakPoint {
+    width: 332px;
+  }
+
+  @include xlDesBreakPoint {
+    width: 302px;
+  }
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.item-card__params {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 12px;
+}
+
+.text-params {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: getVariable($colors, "white");
+}
+
+.item-card__slider {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(0);
+  transition: transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  .card:hover &,
+  .card:focus & {
+    transform: translateY(-56px);
+  }
+}
+
+.item-card__list {
+  position: relative;
+}
+
+.card-data {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  padding: 8px 16px;
+  background: #ffffffcc;
+}
+
+.text-data {
+  color: getVariable($colors, "accent");
+
+  & + span {
+    margin: 0 3px;
+  }
+}
+
+.item-card__description {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 16px;
+  padding: 16px;
+  background: getVariable($colors, "white");
+}
+
+.card-title {
+  font-weight: getVariable($fontWeight, weightMedium);
+  font-size: getVariable($fontSize, sizeLarge);
+}
+
+.card-info {
+  @extend %button;
+  position: absolute;
+  bottom: 0;
+  justify-self: end;
+  padding: 10px 24px;
+  transform: translateY(100%);
+}
+
+.card-text-undefind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  & > p {
+    font-family: inherit;
+    font-size: getVariable($fontSize, sizeLarge);
+    font-weight: getVariable($fontWeight, weightMedium);
+  }
+}

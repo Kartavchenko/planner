@@ -1,0 +1,20 @@
+@import "./variables";
+
+%button {
+  font-family: inherit;
+  font-size: getVariable($fontSize, sizeLarge);
+  line-height: getVariable($fontHeight, lineHeightLarge);
+  color: getVariable($colors, "white");
+  background-color: getVariable($colors, "accent");
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: getVariable($colors, "hover");
+  }
+}

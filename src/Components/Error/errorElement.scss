@@ -1,0 +1,16 @@
+@import "../../sassStyles/variables";
+
+.box-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.title-not-found {
+  font-family: inherit;
+  font-size: getVariable($fontSize, sizeTitle);
+  line-height: getVariable($fontHeight, lineHeightTitle);
+}

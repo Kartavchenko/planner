@@ -1,0 +1,34 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/extends";
+
+.create-event {
+  @extend %button;
+  padding: 16px;
+  margin-top: 40px;
+  margin-right: 0;
+  margin-left: auto;
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    display: none;
+
+    @include mdTabBreakPoint {
+      display: inline;
+      color: getVariable($colors, "white");
+      font-size: getVariable($fontSize, sizeLarge);
+      line-height: getVariable($fontHeight, lineHeightLarge);
+      margin-left: 16px;
+    }
+  }
+
+  &__icon {
+    fill: getVariable($colors, "white");
+    height: 24px;
+    width: 24px;
+  }
+}

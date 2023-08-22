@@ -1,0 +1,39 @@
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.search-box {
+  position: relative;
+  margin-top: 24px;
+
+  @include mdTabBreakPoint {
+    margin-top: 0;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: getVariable($colors, "accent");
+}
+
+.search-input {
+  color: getVariable($colors, "accent");
+  box-shadow: 2px 4px 9px 0px #a68dae47;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  line-height: 14px;
+  padding: 12px;
+  padding-left: 48px;
+  width: 272px;
+
+  @include mdTabBreakPoint {
+    width: 368px;
+  }
+
+  @include lgDesBreakPoint {
+    width: 410px;
+  }
+}
