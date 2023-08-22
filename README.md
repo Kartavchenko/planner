@@ -31,7 +31,7 @@ Welcome to the Event Planner repository! This is a [React + TypeScript + Vite](h
 1. Clone this repository to your local machine using:
 
    ```
-   git clone https://github.com/kartavchenko/planner.git
+   git clone https://github.com/Kartavchenko/planner.git
    ```
 
 2. Navigate to the project directory:
