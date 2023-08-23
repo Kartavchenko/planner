@@ -1,5 +1,4 @@
 import { Obj } from "../../pages/MainPage";
-import defaultPic from "../../images/default-img-large.jpg";
 import ImgElement from "../ImgElement/ImgElement";
 
 export default function DetailsEvent({
