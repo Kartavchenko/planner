@@ -176,7 +176,7 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
                 inputId="category"
                 options={categoryOption}
                 onChange={(value) => field.onChange(value)}
-                edittValue={field.value}
+                editValue={field.value}
               />
             )}
           />
@@ -215,7 +215,7 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
                 inputId="priority"
                 options={priorityOptions}
                 onChange={(value) => field.onChange(value)}
-                edittValue={field.value}
+                editValue={field.value}
               />
             )}
           />

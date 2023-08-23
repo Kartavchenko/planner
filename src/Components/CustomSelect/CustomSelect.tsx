@@ -3,19 +3,19 @@ import { useState } from "react";
 interface CustomSelectProps {
   inputId: string;
   options: string[];
-  edittValue?: string;
+  editValue?: string;
   onChange: (selectedOption: string) => void;
 }
 
 export default function CustomSelect({
   inputId,
   options,
-  edittValue,
+  editValue,
   onChange,
 }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | undefined>(
-    edittValue
+    editValue
   );
 
   const toggleDropdown = () => {
@@ -35,7 +35,7 @@ export default function CustomSelect({
           className="input dropdown-button"
           type="button"
           id={inputId}
-          value={selectedOption ? selectedOption : edittValue}
+          value={selectedOption ? selectedOption : editValue}
           onClick={toggleDropdown}
         />
         {isOpen && (

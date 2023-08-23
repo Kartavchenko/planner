@@ -1,5 +1,6 @@
 import { Obj } from "../../pages/MainPage";
 import defaultPic from "../../images/default-img-large.jpg";
+import ImgElement from "../ImgElement/ImgElement";
 
 export default function DetailsEvent({
   currentEvent,
@@ -17,12 +18,7 @@ export default function DetailsEvent({
       <h2 className="event-title">{title}</h2>
       <ul className="event-list">
         <li className="event-item__img">
-          <img
-            className="event-img"
-            src={defaultPic}
-            loading="lazy"
-            alt="category img"
-          />
+          <ImgElement styleClass="event-img" eventCategory={category} />
         </li>
         <li className="event-item__description">
           <ul className="event-list__details">

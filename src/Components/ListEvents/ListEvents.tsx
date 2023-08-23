@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useMyEvents } from "../../pages/MainPage";
 import BtnCreateEvent from "../BtnCreateEvent/BtnCreateEvent";
-import defaulPicture from "../../images/default-img-small.jpg";
+import ImgElement from "../ImgElement/ImgElement";
 
 export default function ListEvents() {
   const { events } = useMyEvents();
@@ -28,11 +28,9 @@ export default function ListEvents() {
               <li className="card" key={id}>
                 <ul>
                   <li>
-                    <img
-                      className="card-img"
-                      src={defaulPicture}
-                      loading="lazy"
-                      alt="picture of event"
+                    <ImgElement
+                      styleClass="card-img"
+                      eventCategory={category}
                     />
                   </li>
                   <li className="item-card__params">
