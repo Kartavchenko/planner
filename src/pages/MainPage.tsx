@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import Header from "../Components/Header/Header";
-import { getEvents, removeStorageItem } from "../localStorage";
+import { getEvents, removeStorageItem } from "../localStorage/localStorage";
 
 export interface Obj {
   id?: string;

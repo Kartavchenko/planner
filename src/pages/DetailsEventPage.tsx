@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { Obj, useMyEvents } from "./MainPage";
 import DetailsEvent from "../Components/DetailsEvent/DetailsEvent";
-import { editEvent, removeEvent } from "../localStorage";
+import { editEvent, removeEvent } from "../localStorage/localStorage";
 import Notiflix from "../notiflix";
 
 export default function DetailsEventPage() {

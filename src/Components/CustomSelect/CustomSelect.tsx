@@ -4,7 +4,8 @@ interface CustomSelectProps {
   inputId: string;
   options: string[];
   editValue?: string;
-  onChange: (selectedOption: string) => void;
+  onChange: (value: string) => void;
+  errors?: object;
 }
 
 export default function CustomSelect({
@@ -12,6 +13,7 @@ export default function CustomSelect({
   options,
   editValue,
   onChange,
+  errors,
 }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | undefined>(
@@ -32,7 +34,9 @@ export default function CustomSelect({
     <div className="custom-select">
       <div className={`select-dropdown ${isOpen ? "open" : ""}`}>
         <input
-          className="input dropdown-button"
+          className={
+            errors ? "input dropdown-button error" : "input dropdown-button"
+          }
           type="button"
           id={inputId}
           value={selectedOption ? selectedOption : editValue}

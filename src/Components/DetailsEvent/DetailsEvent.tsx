@@ -1,4 +1,5 @@
 import { Obj } from "../../pages/MainPage";
+import { dateFormat, timeFormat } from "../../parseDate";
 import ImgElement from "../ImgElement/ImgElement";
 
 export default function DetailsEvent({
@@ -12,6 +13,7 @@ export default function DetailsEvent({
 }) {
   const { title, description, date, time, location, category, priority } =
     currentEvent;
+
   return (
     <div className="event-box">
       <h2 className="event-title">{title}</h2>
@@ -31,9 +33,9 @@ export default function DetailsEvent({
                 <p className="details-location">{location}</p>
               </div>
               <div className="event-box__date">
-                <p className="event-date">{date}</p>
+                <p className="event-date">{dateFormat(date)}</p>
                 <span className="event-date">at</span>
-                <p className="event-date">{time}</p>
+                <p className="event-date">{timeFormat(time)}</p>
               </div>
             </li>
             <li className="event-item__btns">

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import FormEvent from "../Components/FormEvent/FormEvent";
 import { Obj } from "./MainPage";
-import { getEvents } from "../localStorage";
+import { getEvents } from "../localStorage/localStorage";
 
 export default function EditEventPage() {
   const [editorshipEvent, setEditorshipEvent] = useState<Obj>();

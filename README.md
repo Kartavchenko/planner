@@ -22,6 +22,8 @@ Welcome to the Event Planner repository! This is a [React + TypeScript + Vite](h
 
 - **Notiflix:** Notiflix provides customizable notifications and dialogs, enhancing the user experience by providing feedback and alerts.
 
+- **Material UI:** MUI is used as a date picker and time picker for better UI/UX.
+
 - **React Icons:** Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
 
 - **Modern-Normilize:** For Normalize browsers' default style.
@@ -52,7 +54,7 @@ Welcome to the Event Planner repository! This is a [React + TypeScript + Vite](h
    npm run dev
    ```
 
-5. Open your browser and navigate to `http://localhost:3000` to access the Planner app.
+5. Open your browser and navigate to `http://localhost:5173` to access the Planner app.
 
 ## How to Contribute
 

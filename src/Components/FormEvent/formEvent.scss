@@ -133,6 +133,8 @@
 }
 
 .label {
+  display: flex;
+  flex-direction: column;
   font-family: inherit;
   font-size: getVariable($fontSize, sizeLarge);
   line-height: getVariable($fontHeight, lineHeightSmall);
@@ -165,7 +167,7 @@
 
     &:hover,
     &:focus {
-      border: 1px solid getVariable($colors, "accent");
+      outline: 1px solid getVariable($colors, "accent");
     }
 
     &.error {
@@ -185,7 +187,7 @@
   &:hover,
   &:focus,
   &:active {
-    border: 1px solid getVariable($colors, "accent");
+    outline: 1px solid getVariable($colors, "accent");
   }
 
   &.error {

@@ -3,12 +3,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useLocation, useNavigate } from "react-router-dom";
 import { formSchema } from "../../Schemas/formSchema";
 import Select from "../CustomSelect/CustomSelect";
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
+import CustomTimePicker from "../CustomTimePicker/CustomTimePicker";
 import {
   saveEvent,
   removeEvent,
   removeStorageItem,
   saveEditedEvent,
-} from "../../localStorage";
+} from "../../localStorage/localStorage";
 import Notiflix from "../../notiflix";
 
 interface FormData {
@@ -118,33 +120,41 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
           )}
         </div>
         <div className="box-field">
-          <label className="label" htmlFor="date">
+          <label className="label">
             Date
+            <Controller
+              name="date"
+              control={control}
+              defaultValue=""
+              render={({ field: { onChange, value } }) => (
+                <CustomDatePicker
+                  onChange={(value) => onChange(value)}
+                  editValue={value}
+                  errors={errors.date}
+                />
+              )}
+            />
           </label>
-          <input
-            type="date"
-            className={errors.date ? "input error" : "input"}
-            id="date"
-            {...register("date", {
-              required: "Date is required",
-            })}
-          />
           {errors.date && (
             <span className="error-msg">{errors.date.message}</span>
           )}
         </div>
         <div className="box-field">
-          <label className="label" htmlFor="time">
+          <label className="label">
             Time
+            <Controller
+              name="time"
+              control={control}
+              defaultValue=""
+              render={({ field: { onChange, value } }) => (
+                <CustomTimePicker
+                  onChange={(value) => onChange(value)}
+                  editValue={value}
+                  errors={errors.time}
+                />
+              )}
+            />
           </label>
-          <input
-            className={errors.time ? "input error" : "input"}
-            type="time"
-            id="time"
-            {...register("time", {
-              required: "Time is required",
-            })}
-          />
           {errors.time && (
             <span className="error-msg">{errors.time.message}</span>
           )}
@@ -171,12 +181,13 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
             name="category"
             control={control}
             defaultValue=""
-            render={({ field }) => (
+            render={({ field: { onChange, value } }) => (
               <Select
                 inputId="category"
                 options={categoryOption}
-                onChange={(value) => field.onChange(value)}
-                editValue={field.value}
+                onChange={(value) => onChange(value)}
+                editValue={value}
+                errors={errors.category}
               />
             )}
           />
@@ -185,9 +196,7 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
           )}
         </div>
         <div className="box-field box-field__picture">
-          <label className="label picture" htmlFor="picture">
-            Picture
-          </label>
+          <label className="label picture">Picture</label>
           <input className="input" type="text" id="picture" disabled />
           <input
             className={
@@ -210,12 +219,13 @@ export default function FormEvent({ eventId, editorshipEvent }: Props) {
             name="priority"
             control={control}
             defaultValue=""
-            render={({ field }) => (
+            render={({ field: { onChange, value } }) => (
               <Select
                 inputId="priority"
                 options={priorityOptions}
-                onChange={(value) => field.onChange(value)}
-                editValue={field.value}
+                onChange={(value) => onChange(value)}
+                editValue={value}
+                errors={errors.priority}
               />
             )}
           />

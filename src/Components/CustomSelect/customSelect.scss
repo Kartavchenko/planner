@@ -21,8 +21,9 @@
     width: 100%;
   }
 
-  &.open .options-list {
+  .open .options-list {
     display: block;
+    color: getVariable($colors, "text");
   }
 
   .options-list {

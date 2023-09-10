@@ -100,7 +100,13 @@
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   padding: 8px 16px;
-  background: #ffffffcc;
+  background: #f8f8f8;
+  transition: 300ms cubic-bezier(.03, .77, .47, 1);
+
+  .card:hover &,
+  .card:focus & {
+    background: #ffffffcc;
+  }
 }
 
 .text-data {

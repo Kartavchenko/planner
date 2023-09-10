@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useMyEvents } from "../../pages/MainPage";
+import { dateFormat, timeFormat } from "../../parseDate";
 import BtnCreateEvent from "../BtnCreateEvent/BtnCreateEvent";
 import ImgElement from "../ImgElement/ImgElement";
 
@@ -40,9 +41,9 @@ export default function ListEvents() {
                   <li className="item-card__slider">
                     <ul className="item-card__list">
                       <li className="card-data">
-                        <p className="text-data">{date}</p>
+                        <p className="text-data">{dateFormat(date)}</p>
                         <span className="text-data">at</span>
-                        <p className="text-data">{time}</p>
+                        <p className="text-data">{timeFormat(time)}</p>
                         <p className="text-data">{location}</p>
                       </li>
                       <li className="item-card__description">
