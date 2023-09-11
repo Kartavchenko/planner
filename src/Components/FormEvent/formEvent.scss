@@ -156,6 +156,19 @@
   margin-top: 8px;
   outline: none;
 
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    &:hover {
+      .MuiOutlinedInput-notchedOutline {
+        border: 1px solid getVariable($colors, "accent");
+      }
+    }
+  }
+
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: getVariable($colors, "divider");
+    border-radius: 8px;
+  }
+
   &__textarea {
     font-family: inherit;
     border: 1px solid getVariable($colors, "divider");
