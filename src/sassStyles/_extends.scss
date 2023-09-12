@@ -2,7 +2,6 @@
 
 %button {
   font-family: inherit;
-  font-size: getVariable($fontSize, sizeLarge);
   line-height: getVariable($fontHeight, lineHeightLarge);
   color: getVariable($colors, "white");
   background-color: getVariable($colors, "accent");

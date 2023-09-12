@@ -77,6 +77,18 @@
   padding: 6px 12px;
   border-radius: 8px;
   background: getVariable($colors, "white");
+
+  &.low {
+    color: getVariable($colors, "low");
+  }
+
+  &.medium {
+    color: getVariable($colors, "medium");
+  }
+
+  &.high {
+    color: getVariable($colors, "high");
+  }
 }
 
 .item-card__slider {
@@ -100,8 +112,8 @@
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   padding: 8px 16px;
-  background: #f8f8f8;
-  transition: 300ms cubic-bezier(.03, .77, .47, 1);
+  background: #ffffff;
+  transition: 300ms cubic-bezier(0.03, 0.77, 0.47, 1);
 
   .card:hover &,
   .card:focus & {
@@ -123,6 +135,10 @@
   gap: 16px;
   padding: 16px;
   background: getVariable($colors, "white");
+
+  @include mdTabBreakPoint {
+    padding: 20px 16px;
+  }
 }
 
 .card-title {

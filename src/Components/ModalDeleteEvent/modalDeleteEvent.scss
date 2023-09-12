@@ -1,0 +1,45 @@
+@import "../../sassStyles/extends";
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 272px;
+  background: getVariable($colors, "white");
+  padding: 20px 24px;
+	border-radius: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.modal-box__btns {
+	margin-top: 24px;
+}
+
+.modal-delete__text {
+	display: flex;
+}
+
+.event-btn {
+  &__delete {
+    @extend %button;
+    padding: 8px 16px;
+    font-size: getVariable($fontSize, sizeSmall);
+    box-shadow: none;
+
+		@include mdTabBreakPoint {
+			margin-left: 16px;
+		}
+  }
+
+  &__cancel {
+    @extend %button;
+    padding: 8px 16px;
+    font-size: getVariable($fontSize, sizeSmall);
+
+  }
+}

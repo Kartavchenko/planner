@@ -1,6 +1,7 @@
 import { Obj } from "../../pages/MainPage";
 import { dateFormat, timeFormat } from "../../parseDate";
 import ImgElement from "../ImgElement/ImgElement";
+import ModalDeleteEvent from "../ModalDeleteEvent/ModalDeleteEvent";
 
 export default function DetailsEvent({
   currentEvent,
@@ -46,13 +47,7 @@ export default function DetailsEvent({
               >
                 Edit
               </button>
-              <button
-                className="event-btn__delete"
-                type="button"
-                onClick={() => removeEvt()}
-              >
-                Delete event
-              </button>
+              <ModalDeleteEvent removeEvt={removeEvt} />
             </li>
           </ul>
         </li>

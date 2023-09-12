@@ -36,7 +36,9 @@ export default function ListEvents() {
                   </li>
                   <li className="item-card__params">
                     <p className="text-params">{category}</p>
-                    <p className="text-params">{priority}</p>
+                    <p className={`text-params ${priority.toLowerCase()}`}>
+                      {priority}
+                    </p>
                   </li>
                   <li className="item-card__slider">
                     <ul className="item-card__list">
